@@ -9,6 +9,8 @@ type Props = {
   };
 };
 
+export const revalidate = 0;
+
 export default async function Page({searchParams}: Props){
   const { contents: news } = await getNewsList({
     limit: NEWS_LIST_LIMIT,

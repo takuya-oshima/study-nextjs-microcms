@@ -10,6 +10,8 @@ type Props = {
   };
 };
 
+export const revalidate = 0;
+
 export default async function page({ params }: Props){
   const current = parseInt(params.current, 10);
   if(Number.isNaN(current) || current < 1){

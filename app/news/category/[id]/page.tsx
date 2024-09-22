@@ -11,6 +11,8 @@ type Props = {
   };
 };
 
+export const revalidate = 0;
+
 export default async function Page({ params }: Props){
   const category = await getCategoryDetail(params.id).catch(notFound);
 
