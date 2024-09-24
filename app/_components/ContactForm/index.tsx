@@ -44,7 +44,7 @@ export default function ContactForm() {
       </div>
       <div className={styles.item}>
         <label className={styles.label} htmlFor="message">メッセージ</label>
-        <textarea className={styles.textarea} type="text" id="message" name="message" />
+        <textarea className={styles.textarea} id="message" name="message" />
       </div>
       <div className={styles.actions}>
         {state.status === "error" && (
