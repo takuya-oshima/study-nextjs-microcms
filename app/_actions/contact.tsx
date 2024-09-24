@@ -14,7 +14,7 @@ export async function createContactDate(_prevState: any, formData: FormData){
     message: formData.get("message") as string,
   };
 
-  if(!rawFormData.lastNnme){
+  if(!rawFormData.lastname){
     return {
       status: "error",
       message: "性を入力してください",
