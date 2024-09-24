@@ -1,11 +1,12 @@
 "use server";
 
-function validateEmail(email: string){
+function validateEmail(email: string) {
   const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return pattern.test(email);
-};
+}
 
-export async function createContactData(_prevState: any, formData: FormData){
+export async function createContactData(_prevState: any, formData: FormData) {
+  // formのname属性ごとにformData.get()で値を取り出すことができる
   const rawFormData = {
     lastname: formData.get("lastname") as string,
     firstname: formData.get("firstname") as string,
@@ -14,37 +15,37 @@ export async function createContactData(_prevState: any, formData: FormData){
     message: formData.get("message") as string,
   };
 
-  if(!rawFormData.lastname){
+  if (!rawFormData.lastname) {
     return {
       status: "error",
-      message: "性を入力してください",
+      message: "姓を入力してください",
     };
   }
-  if(!rawFormData.firstname){
+  if (!rawFormData.firstname) {
     return {
       status: "error",
       message: "名を入力してください",
     };
   }
-  if(!rawFormData.company){
+  if (!rawFormData.company) {
     return {
       status: "error",
       message: "会社名を入力してください",
     };
   }
-  if(!rawFormData.email){
+  if (!rawFormData.email) {
     return {
       status: "error",
       message: "メールアドレスを入力してください",
     };
   }
-  if(!validateEmail(rawFormData.email)){
+  if (!validateEmail(rawFormData.email)) {
     return {
       status: "error",
-      message: "メールアドレスの形式が間違っています",
+      message: "メールアドレスの形式が誤っています",
     };
   }
-  if(!rawFormData.message){
+  if (!rawFormData.message) {
     return {
       status: "error",
       message: "メッセージを入力してください",
@@ -87,21 +88,18 @@ export async function createContactData(_prevState: any, formData: FormData){
           },
         ],
       }),
-    },
+    }
   );
 
   try {
     await result.json();
-  } catch(e){
+  } catch (e) {
     console.log(e);
     return {
       status: "error",
-      message: "お問い合わせ失敗しました",
+      message: "お問い合わせに失敗しました",
     };
-  };
+  }
 
-  return {
-    status: "success",
-    message: "OK",
-  };
-};
+  return { status: "success", message: "OK" };
+}
