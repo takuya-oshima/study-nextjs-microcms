@@ -7,20 +7,20 @@ function validateEmail(email: string){
 
 export async function createContactDate(_prevState: any, formData: FormData){
   const rawFormData = {
-    lastName: formData.get("lastname") as string,
-    firstName: formData.get("firstname") as string,
+    lastname: formData.get("lastname") as string,
+    firstname: formData.get("firstname") as string,
     company: formData.get("company") as string,
     email: formData.get("email") as string,
     message: formData.get("message") as string,
   };
 
-  if(!rawFormData.lastName){
+  if(!rawFormData.lastNnme){
     return {
       status: "error",
       message: "性を入力してください",
     };
   }
-  if(!rawFormData.firstName){
+  if(!rawFormData.firstname){
     return {
       status: "error",
       message: "名を入力してください",
