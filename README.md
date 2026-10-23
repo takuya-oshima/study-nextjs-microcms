@@ -1,6 +1,8 @@
 # study-nextjs-microcms
 
 Next.js（App Router）とmicroCMSを使ったWebサイト制作の学習用リポジトリです。
+study-nextjs-microcms.vercel.app
+
 書籍『[Next.js＋ヘッドレスCMSではじめる！ かんたんモダンWebサイト制作入門](https://www.amazon.co.jp/dp/4798183660)』（柴田和祈 著、翔泳社）のチュートリアルを参考に制作しました。
 企業サイトを想定し、ニュース・メンバー紹介・お問い合わせの各ページを実装しています。
 ここで学んだ構成をもとに、[ポートフォリオサイト](https://github.com/takuya-oshima/portfolio)を制作しています。
